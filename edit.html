@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Formulir Profil</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="form-container" id="form">
+            <h1>Formulir Profil</h1>
+            <form action="index.html">
+                <label for="inputnama">Nama:</label>
+                <input
+                    type="text"
+                    id="inputnama"
+                    name="inputnama"
+                    required
+                /><br /><br />
+
+                <label for="inputrole">Role:</label>
+                <input
+                    type="text"
+                    id="inputrole"
+                    name="inputrole"
+                    required
+                /><br /><br />
+
+                <label for="inputavailability">Availability:</label>
+                <input
+                    type="text"
+                    id="inputavailability"
+                    name="inputavailability"
+                    required
+                /><br /><br />
+
+                <label for="inputusia">Usia:</label>
+
+                <input
+                    type="text"
+                    id="inputusia"
+                    name="inputusia"
+                    required
+                /><br /><br />
+
+                <label for="inputlokasi">Lokasi:</label>
+                <input
+                    type="text"
+                    id="inputlokasi"
+                    name="inputlokasi"
+                    required
+                /><br /><br />
+
+                <label for="inputyoe">Years Experience:</label>
+                <input
+                    type="number"
+                    id="inputyoe"
+                    name="inputyoe"
+                    required
+                /><br /><br />
+
+                <label for="inputemail">Email:</label>
+                <input
+                    type="email"
+                    id="inputemail"
+                    name="inputemail"
+                    required
+                /><br /><br />
+
+                <button id="submit" onclick="passvalues()">SUBMIT</button>
+            </form>
+        </div>
+        <script>
+            const userNameValueShow =
+                localStorage.getItem("user-name") || "Nama Anda";
+            const userRoleValueShow =
+                localStorage.getItem("user-role") || "Front End Designer";
+            const userAvailabilityValueShow =
+                localStorage.getItem("user-availability") || "Full Time";
+            const userAgeValueShow = localStorage.getItem("user-age") || "19";
+            const userLocationValueShow =
+                localStorage.getItem("user-location") || "Jakarta";
+            const userYoeValueShow = localStorage.getItem("user-yoe") || "2";
+            const userEmailValueShow =
+                localStorage.getItem("user-email") || "email@gmail.com";
+
+            document.getElementById("inputnama").value = userNameValueShow;
+            document.getElementById("inputrole").value = userRoleValueShow;
+            document.getElementById("inputavailability").value =
+                userAvailabilityValueShow;
+            document.getElementById("inputusia").value = userAgeValueShow;
+            document.getElementById("inputlokasi").value =
+                userLocationValueShow;
+            document.getElementById("inputyoe").value = userYoeValueShow;
+            document.getElementById("inputemail").value = userEmailValueShow;
+
+            const form = document.getElementById("form");
+            const userName = document.getElementById("inputnama");
+            const userRole = document.getElementById("inputrole");
+            const userAvailability =
+                document.getElementById("inputavailability");
+            const userAge = document.getElementById("inputusia");
+            const userLocation = document.getElementById("inputlokasi");
+            const userYoe = document.getElementById("inputyoe");
+            const userEmail = document.getElementById("inputemail");
+
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                const userNameValue = userName.value;
+                const userRoleValue = userRole.value;
+                const userAvailabilityValue = userAvailability.value;
+                const userAgeValue = userAge.value;
+                const userLocationValue = userLocation.value;
+                const userYoeValue = userYoe.value;
+                const userEmailValue = userEmail.value;
+
+                localStorage.setItem("user-name", userNameValue);
+                localStorage.setItem("user-role", userRoleValue);
+                localStorage.setItem(
+                    "user-availability",
+                    userAvailabilityValue
+                );
+                localStorage.setItem("user-age", userAgeValue);
+                localStorage.setItem("user-location", userLocationValue);
+                localStorage.setItem("user-yoe", userYoeValue);
+                localStorage.setItem("user-email", userEmailValue);
+
+                window.location.href = "index.html";
+            });
+        </script>
+    </body>
+</html>

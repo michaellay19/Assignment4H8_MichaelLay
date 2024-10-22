@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ASSIGNMENT-4</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="profile">
+            <img class="profile-picture" src="profile.jpg" alt="" />
+            <div class="profile-2 profile-data">
+                <div class="profile-2-atas">
+                    <h1 style="margin: 0;font-weight: bold;" id="name">Nama Anda</h1>
+                    <h5 style="margin: 0;color: grey;" id="role">Front End Designer</h6>
+                </div>
+                <div class="profile-2-bawah">
+                    <button class="size-button edit" id="edit">Edit</button>
+                    <div style="width: 20px;"></div>
+                    <button class="size-button resume">Resume</button>
+                </div>
+            </div>
+            <div class="profile-3 profile-data">
+                <div class="profile-3-desc">
+                    <p class="cat" id="availability">Availability</p>
+                    <p class="cat" id="age">Usia</p>
+                    <p class="cat" id="location">Lokasi</p>
+                    <p class="cat" id="yoe">Pengalaman</p>
+                    <p class="cat" id="email">Email</p>
+                </div>
+                <div class="profile-3-user">
+                    <p class="dataavailability"id="dataavailability">Full Time</p>
+                    <p class="dataage"id="dataage">19</p>
+                    <p class="datalocation"id="datalocation">Jakarta</p>
+                    <p class="datayoe"id="datayoe">2</p>
+                    <p class="dataemail"id="dataemail">email@gmail.com</p>
+                </div>
+            </div>
+        </div>
+        <script>
+            const namevalue =  localStorage.getItem("user-name")  ||"Nama Anda"
+            const rolevalue = localStorage.getItem("user-role")||"Front End Designer" 
+            const availabilityvalue = localStorage.getItem("user-availability")||"Full Time" ;
+            const agevalue = localStorage.getItem("user-age")||"19";
+            const locationvalue =  localStorage.getItem("user-location")||"Jakarta";
+            const yoevalue =  localStorage.getItem("user-yoe")||"2";
+            const emailvalue =  localStorage.getItem("user-email")||"email@gmail.com";
+
+            document.getElementById("name").textContent = namevalue;
+            document.getElementById("role").textContent = rolevalue;
+            document.getElementById("dataavailability").textContent = availabilityvalue;
+            document.getElementById("dataage").textContent = agevalue;
+            document.getElementById("datalocation").textContent = locationvalue;
+            document.getElementById("datayoe").textContent = yoevalue;
+            document.getElementById("dataemail").textContent = emailvalue;
+            
+            document.getElementById("edit").addEventListener("click",function(){
+                window.location.href = "edit.html"
+            })
+        </script>
+    </body>
+</html> 
